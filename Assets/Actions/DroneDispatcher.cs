@@ -11,6 +11,8 @@ namespace Actions
         public Transform package;
         public Transform origin;
         public Transform customer;
+        
+        public readonly float distanceToTarget;
 
         private Vector3 _package;
         private Vector3 _origin;
