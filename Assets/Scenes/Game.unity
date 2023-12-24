@@ -586,7 +586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   package: {fileID: 479633622}
-  origin: {fileID: 0}
+  origin: {fileID: 871309625}
   customer: {fileID: 1654036989}
 --- !u!1 &1654036984
 GameObject:
