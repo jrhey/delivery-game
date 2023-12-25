@@ -884,10 +884,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b2bdcc31cb4566aaead685fdd26c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetList: {fileID: 1874003041}
+--- !u!114 &1874003041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874003036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf9b2b45a5d4a54902ecb76b03aee90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   targets:
-  - {x: 22, y: 1, z: 5}
-  - {x: 0, y: 1, z: 20}
-  - {x: 0, y: 1, z: 0}
+  - {fileID: 479633622}
+  - {fileID: 1654036989}
+  - {fileID: 871309625}
 --- !u!1001 &3057916964462806160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -967,6 +980,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 305053994414267195, guid: 20e1b17b6028f4045b10aa65674c7c1a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1874003040}
+    - targetCorrespondingSourceObject: {fileID: 305053994414267195, guid: 20e1b17b6028f4045b10aa65674c7c1a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1874003041}
     - targetCorrespondingSourceObject: {fileID: 7641357043243302897, guid: 20e1b17b6028f4045b10aa65674c7c1a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1546247337}
