@@ -1,9 +1,9 @@
 using UnityEngine;
 using Renderers;
 
-namespace Drone.Services
+namespace Drone.Components
 {
-    public class DroneHeightProximityLine : MonoBehaviour
+    public class HeightProximityLine : MonoBehaviour
     {
         private CircleAtPointRenderer _circleRenderer;
         private LineToPointRenderer _lineToPointRenderer;

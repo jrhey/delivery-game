@@ -1,14 +1,11 @@
-using Drone.Models;
 using UnityEngine;
 using Renderers;
-using UnityEngine.Serialization;
 
-namespace Drone.Controllers
+namespace Drone.Components
 {
     public class LineToTargetUpdater : MonoBehaviour
     {
-        public TargetList targetList;
-
+        public Transform[] targets;
         private int _targetIndex;
         private int _numTargets;
         private Vector3 _target;
@@ -17,8 +14,8 @@ namespace Drone.Controllers
         private void Start()
         {
             _targetIndex = 0;
-            _numTargets = targetList.targets.Length;
-            _target = targetList.targets[_targetIndex].position;
+            _numTargets = targets.Length;
+            _target = targets[_targetIndex].position;
             CreateLineRenderer();
         }
 
@@ -31,11 +28,11 @@ namespace Drone.Controllers
 
             _lineToPointRenderer.Render(currentPosition, _target);
 
-            if (Vector3.Distance(currentPosition, targetList.targets[_targetIndex].position) > 0.001f)
+            if (Vector3.Distance(currentPosition, targets[_targetIndex].position) > 0.001f)
                 return;
 
             _targetIndex += 1;
-            _target = targetList.targets[_targetIndex].position;
+            _target = targets[_targetIndex].position;
         }
 
         private void CreateLineRenderer()
