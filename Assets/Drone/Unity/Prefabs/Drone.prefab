@@ -71,7 +71,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1427179656829929489}
-  - component: {fileID: 3049799319173148510}
   - component: {fileID: 2217706247770153052}
   - component: {fileID: 2946043406447888707}
   m_Layer: 0
@@ -96,23 +95,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 819877710451394903}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &3049799319173148510
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7641357043243302897}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: ae9c13a829f7c43818e2942aa502ef01, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: ae9c13a829f7c43818e2942aa502ef01, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!23 &2217706247770153052
 MeshRenderer:
   m_ObjectHideFlags: 0
