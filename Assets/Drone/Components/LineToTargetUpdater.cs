@@ -6,6 +6,7 @@ namespace Drone.Components
     public class LineToTargetUpdater : MonoBehaviour
     {
         public Transform[] targets;
+
         private int _targetIndex;
         private int _numTargets;
         private Vector3 _target;
@@ -21,7 +22,7 @@ namespace Drone.Components
 
         private void Update()
         {
-            if (_targetIndex == _numTargets - 1)
+            if (_targetIndex == _numTargets)
                 return;
             
             var currentPosition = transform.position;
@@ -32,6 +33,8 @@ namespace Drone.Components
                 return;
 
             _targetIndex += 1;
+            if (_targetIndex == _numTargets)
+                return;
             _target = targets[_targetIndex].position;
         }
 
