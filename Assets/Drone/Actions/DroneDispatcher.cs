@@ -1,9 +1,9 @@
 using System.Linq;
 using UnityEngine;
-using Trigonometry;
+using Drone.Trigonometry;
 using Renderers;
 
-namespace Actions
+namespace Drone.Actions
 {
     public class DroneDispatcher : MonoBehaviour
     {
@@ -26,7 +26,7 @@ namespace Actions
             _package = package.position;
             _origin = origin.position;
             _customer = customer.position;
-            _waypoints = new DroneWaypointGenerator(_origin, _package).Generate();
+            _waypoints = new DroneWaypointGenerator(transform.position, _package).Generate();
             _waypoints = _waypoints.Concat(new DroneWaypointGenerator(_package, _customer).Generate()).ToArray();
             _waypoints = _waypoints.Concat(new DroneWaypointGenerator(_customer, _origin).Generate()).ToArray();
             _currentWaypointIndex = 0;
@@ -49,7 +49,7 @@ namespace Actions
         {
             var currentPosition = transform.position;
 
-            // _lineToPointRenderer.Render(currentPosition, _package);
+            _lineToPointRenderer.Render(currentPosition, _package);
 
             if (_currentWaypointIndex >= _waypoints.Length)
                 return;
@@ -63,7 +63,7 @@ namespace Actions
 
             if (_currentWaypointIndex >= _waypoints.Length)
                 return;
-
+            
             transform.position = Vector3.MoveTowards(currentPosition, _waypoints[_currentWaypointIndex], step);
         }
     }
