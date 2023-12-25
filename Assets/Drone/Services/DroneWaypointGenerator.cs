@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Drone.Trigonometry
+namespace Drone.Services
 {
     public class DroneWaypointGenerator
     {

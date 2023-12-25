@@ -1,7 +1,7 @@
 using UnityEngine;
 using Renderers;
 
-namespace Drone.Trigonometry
+namespace Drone.Services
 {
     public class DroneHeightProximityLine : MonoBehaviour
     {
