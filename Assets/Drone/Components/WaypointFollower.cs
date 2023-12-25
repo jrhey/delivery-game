@@ -5,7 +5,7 @@ namespace Drone.Components
     public class WaypointFollower: MonoBehaviour
     {
         public Vector3[] waypoints;
-        public float speed = 20f;
+        public float speed = 10f;
         
         private int _currentWaypointIndex;
 

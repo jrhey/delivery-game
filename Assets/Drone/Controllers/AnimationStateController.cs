@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Drone.Controllers
 {
-    public class DroneAnimationController : MonoBehaviour
+    public class AnimationController : MonoBehaviour
     {
         private Animator _animator;
         private readonly float _cruisingAltitude = 15f;

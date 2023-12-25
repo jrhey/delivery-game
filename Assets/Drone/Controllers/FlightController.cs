@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Drone.Controllers
 {
-    public class DroneFlightController : MonoBehaviour
+    public class FlightController : MonoBehaviour
     {
         public Transform[] targets;
 
