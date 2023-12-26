@@ -1,7 +1,7 @@
 using UnityEngine;
 using Renderers;
 
-namespace Drone.Components
+namespace Logistics.Components
 {
     public class LineToTargetUpdater : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Drone.Components
+namespace Logistics.Components
 {
     public class WaypointFollower: MonoBehaviour
     {

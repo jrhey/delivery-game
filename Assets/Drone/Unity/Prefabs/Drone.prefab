@@ -45,10 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2e7fd75856456d81fae54f3ea4b578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  targets: []
+  droneFactory: {fileID: 0}
 --- !u!1 &7641357043243302897
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +104,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f1401458a1564f7eb2aa8fbb6459d12, type: 2}
+  - {fileID: 2100000, guid: 80bc4093300264963a5c3e43779b990d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
