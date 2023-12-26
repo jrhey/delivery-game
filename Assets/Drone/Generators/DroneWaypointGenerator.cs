@@ -24,13 +24,15 @@ namespace Drone.Generators
             
             foreach(var target in _targets)
             {
-                var toAboveTargetDestination = new Vector3(target.position.x, CruisingAltitude, target.position.z);
-                var toTargetPosition = target.position;
-                var toCruisingAltitude = new Vector3(target.position.x, CruisingAltitude, target.position.z);
+                var targetPosition = target.position;
+                var toAboveTargetDestination = new Vector3(targetPosition.x, CruisingAltitude, targetPosition.z);
+                var toTargetPosition = targetPosition;
+                var toCruisingAltitude = new Vector3(targetPosition.x, CruisingAltitude, targetPosition.z);
                 
                 list.Add(toAboveTargetDestination);
                 list.Add(toTargetPosition);
-                list.Add(toCruisingAltitude);
+                if (toTargetPosition != _origin)
+                    list.Add(toCruisingAltitude);
             }
 
             return list.ToArray();
