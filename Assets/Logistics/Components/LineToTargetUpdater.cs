@@ -25,8 +25,6 @@ namespace Logistics.Components
 
         private void Update()
         {
-
-            
             if (_targetIndex == _numTargets)
                 return;
 

@@ -1,38 +1,47 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Events.FoodOrders;
 
 public class RestaurantController : MonoBehaviour
 {
     public Transform[] foodSpawners;
     public GameObject foodToSpawn;
-    public FoodOrderCreatedEvent foodOrderCreatedEvent;
-    
+    public OrderCreatedEvent orderCreatedEvent;
+    public OrderReadyForCollectionEvent orderReadyForCollectionEvent;
+
     private readonly bool _ableToSpawnFood = true;
     private int _currentSpawnIndex = 0;
-    
-    void Start()
+
+    void OnEnable()
     {
-        foodOrderCreatedEvent.orderCreated += CreateOrder;
+        orderCreatedEvent.orderCreated += CreateOrder;
     }
-    private void CreateOrder(GameObject customer)
+
+    private void CreateOrder(OrderRecord orderRecord)
     {
-        print($"order received by customer {customer.name}");
+        print($"order placed by customer {orderRecord.customer.name}");
         if (_ableToSpawnFood)
         {
-            SpawnFoodForCollection(foodSpawners[_currentSpawnIndex]);
+            print($"order confirmed by {orderRecord.restaurant.name}");
+            var foodObject = SpawnFoodForCollection(foodSpawners[_currentSpawnIndex]);
+            
+            var orderReceipt = ScriptableObject.CreateInstance<OrderReceipt>();
+            orderReceipt.orderRecord = orderRecord;
+            orderReceipt.orderItem = foodObject.transform;
+            orderReadyForCollectionEvent.RaiseEvent(orderReceipt);
         }
     }
 
-    private void SpawnFoodForCollection(Transform spawnTransform)
+    private GameObject SpawnFoodForCollection(Transform spawnTransform)
     {
         var foodInstance = Instantiate(foodToSpawn, spawnTransform.position, spawnTransform.rotation);
         foodInstance.transform.SetParent(spawnTransform);
         _currentSpawnIndex += 1;
+        print($"Order ready for collection at {foodInstance.transform}");
+        return foodInstance;
     }
-    
-    private void OnDestroy()
+
+    private void OnDisable()
     {
-        foodOrderCreatedEvent.orderCreated -= CreateOrder;
+        orderCreatedEvent.orderCreated -= CreateOrder;
     }
 }

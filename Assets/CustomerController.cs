@@ -1,16 +1,19 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
+using Events.FoodOrders;
 
 public class CustomerController : MonoBehaviour, IPointerClickHandler
 {
     public Transform[] restaurants;
-    public FoodOrderCreatedEvent foodOrderCreatedEvent;
+    public OrderCreatedEvent orderCreatedEvent;
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        print("Order created");
-        foodOrderCreatedEvent.RaiseEvent(gameObject);
+        var orderRecord = ScriptableObject.CreateInstance<OrderRecord>();
+        orderRecord.customer = transform;
+        orderRecord.restaurant = restaurants.First();
+        orderCreatedEvent.RaiseEvent(orderRecord);
     }
     
     // StartCoroutine(SpawnFoodForCollection(3));

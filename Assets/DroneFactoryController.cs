@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
+using Drone.Controllers;
+using Events.FoodOrders;
 using UnityEngine;
 
 public class DroneFactoryController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public OrderReadyForCollectionEvent orderReadyForCollectionEvent;
+    public GameObject[] drones;
+
+    private void OnEnable()
     {
-        
+        orderReadyForCollectionEvent.orderReadyForCollection += DeliveryReadyForDispatch;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        orderReadyForCollectionEvent.orderReadyForCollection -= DeliveryReadyForDispatch;
+    }
+
+    private void DeliveryReadyForDispatch(OrderReceipt orderReceipt)
+    {
+        var drone = Instantiate(drones[0], transform);
+        var flightController = drone.GetComponent<FlightController>();
+        flightController.targets = new[] { orderReceipt.orderRecord.restaurant, orderReceipt.orderRecord.customer };
+        flightController.droneFactory = transform;
+        print($"Dispatching drone for {orderReceipt.orderRecord.customer.name}");
     }
 }

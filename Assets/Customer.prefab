@@ -120,5 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648679801ace4400c9812ca64bdd9277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restaurants: []
-  foodOrderCreatedEvent: {fileID: 11400000, guid: 73dc58ba768af428abd13727b9ee6254, type: 2}
+  restaurants:
+  - {fileID: 0}
+  orderCreatedEvent: {fileID: 11400000, guid: 73dc58ba768af428abd13727b9ee6254, type: 2}
