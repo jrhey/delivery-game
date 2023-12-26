@@ -26,18 +26,18 @@ public class RestaurantController : MonoBehaviour
             
             var orderReceipt = ScriptableObject.CreateInstance<OrderReceipt>();
             orderReceipt.orderRecord = orderRecord;
-            orderReceipt.orderItem = foodObject.transform;
+            orderReceipt.orderItem = foodObject;
             orderReadyForCollectionEvent.RaiseEvent(orderReceipt);
         }
     }
 
-    private GameObject SpawnFoodForCollection(Transform spawnTransform)
+    private Transform SpawnFoodForCollection(Transform spawnTransform)
     {
         var foodInstance = Instantiate(foodToSpawn, spawnTransform.position, spawnTransform.rotation);
         foodInstance.transform.SetParent(spawnTransform);
         _currentSpawnIndex += 1;
-        print($"Order ready for collection at {foodInstance.transform}");
-        return foodInstance;
+        print($"Order ready for collection at {foodInstance.transform.position}");
+        return spawnTransform;
     }
 
     private void OnDisable()

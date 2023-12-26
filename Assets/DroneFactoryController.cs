@@ -21,7 +21,7 @@ public class DroneFactoryController : MonoBehaviour
     {
         var drone = Instantiate(drones[0], transform);
         var flightController = drone.GetComponent<FlightController>();
-        flightController.targets = new[] { orderReceipt.orderRecord.restaurant, orderReceipt.orderRecord.customer };
+        flightController.targets = new[] { orderReceipt.orderItem, orderReceipt.orderRecord.customer };
         flightController.droneFactory = transform;
         print($"Dispatching drone for {orderReceipt.orderRecord.customer.name}");
     }

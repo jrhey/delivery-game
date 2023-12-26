@@ -31,9 +31,12 @@ namespace Drone.Generators
                 
                 list.Add(toAboveTargetDestination);
                 list.Add(toTargetPosition);
-                if (toTargetPosition != _origin)
-                    list.Add(toCruisingAltitude);
+                list.Add(toCruisingAltitude);
             }
+            var toAboveOrigin = new Vector3(_origin.x, CruisingAltitude, _origin.z);
+            
+            list.Add(toAboveOrigin);
+            list.Add(_origin);
 
             return list.ToArray();
         }
