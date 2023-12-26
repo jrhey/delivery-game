@@ -16,15 +16,20 @@ namespace Logistics.Components
         {
             _targetIndex = 0;
             _numTargets = targets.Length;
-            _target = targets[_targetIndex].position;
-            CreateLineRenderer();
+            if (_numTargets > 0)
+            {
+                _target = targets[_targetIndex].position;
+                CreateLineRenderer();
+            }
         }
 
         private void Update()
         {
+
+            
             if (_targetIndex == _numTargets)
                 return;
-            
+
             var currentPosition = transform.position;
 
             _lineToPointRenderer.Render(currentPosition, _target);

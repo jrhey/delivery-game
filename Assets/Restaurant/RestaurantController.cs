@@ -1,28 +1,38 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RestaurantController : MonoBehaviour
 {
     public Transform[] foodSpawners;
     public GameObject foodToSpawn;
+    public FoodOrderCreatedEvent foodOrderCreatedEvent;
     
-    private bool _ableToSpawnFood = true;
+    private readonly bool _ableToSpawnFood = true;
     private int _currentSpawnIndex = 0;
     
     void Start()
     {
-        StartCoroutine(SpawnFoodForCollection(3));
+        foodOrderCreatedEvent.orderCreated += CreateOrder;
+    }
+    private void CreateOrder(GameObject customer)
+    {
+        print($"order received by customer {customer.name}");
+        if (_ableToSpawnFood)
+        {
+            SpawnFoodForCollection(foodSpawners[_currentSpawnIndex]);
+        }
     }
 
-    private IEnumerator SpawnFoodForCollection(float waitTimeSeconds)
+    private void SpawnFoodForCollection(Transform spawnTransform)
     {
-        while (_ableToSpawnFood)
-        {
-            var spawnTransform = foodSpawners[_currentSpawnIndex];
-            var foodInstance = Instantiate(foodToSpawn, spawnTransform.position, spawnTransform.rotation);
-            foodInstance.transform.SetParent(spawnTransform);
-            _currentSpawnIndex += 1;
-            yield return new WaitForSeconds(waitTimeSeconds);
-        }
+        var foodInstance = Instantiate(foodToSpawn, spawnTransform.position, spawnTransform.rotation);
+        foodInstance.transform.SetParent(spawnTransform);
+        _currentSpawnIndex += 1;
+    }
+    
+    private void OnDestroy()
+    {
+        foodOrderCreatedEvent.orderCreated -= CreateOrder;
     }
 }
