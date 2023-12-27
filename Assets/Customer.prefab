@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 493817386611174533}
   - component: {fileID: 7063626302758288662}
   - component: {fileID: 5741713636877651349}
+  - component: {fileID: 6619581398730208899}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -123,3 +124,15 @@ MonoBehaviour:
   restaurants:
   - {fileID: 0}
   orderCreatedEvent: {fileID: 11400000, guid: 73dc58ba768af428abd13727b9ee6254, type: 2}
+--- !u!114 &6619581398730208899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348598432495626064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e5ad4e0fa74895b7bc2b8881f36018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

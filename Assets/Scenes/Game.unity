@@ -320,6 +320,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &465956876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1118407191101853320, guid: 13f80916a2ce043dfaa20ed69d5b6e0f, type: 3}
+  m_PrefabInstance: {fileID: 2871843938628174271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &682821530
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +393,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &700745897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5751312708163235605, guid: 2ff9d01def3244b7c8da48eb57d444fe, type: 3}
+  m_PrefabInstance: {fileID: 1914906971060385847}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &700745903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700745897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e5ad4e0fa74895b7bc2b8881f36018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1161260308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -454,6 +476,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6540125225061975203, guid: 13f80916a2ce043dfaa20ed69d5b6e0f, type: 3}
   m_PrefabInstance: {fileID: 2871843938628174271}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1262054567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465956876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e5ad4e0fa74895b7bc2b8881f36018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1462387952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -579,7 +613,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 40
+  orthographic size: 31.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -603,13 +637,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724451560}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 100, z: 0}
+  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
+  m_LocalPosition: {x: -45, y: 70, z: -45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
 --- !u!114 &1724451564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,10 +854,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5455254737146315109, guid: 2ff9d01def3244b7c8da48eb57d444fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751312708163235605, guid: 2ff9d01def3244b7c8da48eb57d444fe, type: 3}
+      propertyPath: m_Name
+      value: Body
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5751312708163235605, guid: 2ff9d01def3244b7c8da48eb57d444fe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 700745903}
   m_SourcePrefab: {fileID: 100100000, guid: 2ff9d01def3244b7c8da48eb57d444fe, type: 3}
 --- !u!1001 &2871843938628174271
 PrefabInstance:
@@ -904,7 +949,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1118407191101853320, guid: 13f80916a2ce043dfaa20ed69d5b6e0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1262054567}
   m_SourcePrefab: {fileID: 100100000, guid: 13f80916a2ce043dfaa20ed69d5b6e0f, type: 3}
 --- !u!1001 &5218839803391620718
 PrefabInstance:
