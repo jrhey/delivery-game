@@ -5,7 +5,7 @@ namespace Logistics.Components
     public class WaypointFollower: MonoBehaviour
     {
         public Vector3[] waypoints;
-        public float speed = 10f;
+        public float speed = 3f;
         
         private int _currentWaypointIndex;
 
