@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 413588823}
   - component: {fileID: 413588822}
   - component: {fileID: 413588821}
+  - component: {fileID: 413588825}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -381,6 +382,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!156049354 &413588825
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413588820}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 1}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
 --- !u!1 &465956876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1118407191101853320, guid: 13f80916a2ce043dfaa20ed69d5b6e0f, type: 3}
@@ -404,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8877503576095761049, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.17
+      value: -5.56
       objectReference: {fileID: 0}
     - target: {fileID: 8877503576095761049, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -979,7 +992,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 804979765345439486, guid: 2ff9d01def3244b7c8da48eb57d444fe, type: 3}
       propertyPath: m_text
-      value: Robo Co
+      value: Food Co
       objectReference: {fileID: 0}
     - target: {fileID: 804979765345439486, guid: 2ff9d01def3244b7c8da48eb57d444fe, type: 3}
       propertyPath: m_fontAsset
@@ -1077,6 +1090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Restaurant
       objectReference: {fileID: 0}
+    - target: {fileID: 1118407191101853320, guid: 13f80916a2ce043dfaa20ed69d5b6e0f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3734914550041588122, guid: 13f80916a2ce043dfaa20ed69d5b6e0f, type: 3}
       propertyPath: foodToSpawn
       value: 
@@ -1167,7 +1184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8877503576095761049, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.51
+      value: -5.67
       objectReference: {fileID: 0}
     - target: {fileID: 8877503576095761049, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
       propertyPath: m_LocalPosition.y
