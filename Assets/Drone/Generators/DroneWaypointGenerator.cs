@@ -5,7 +5,7 @@ namespace Drone.Generators
 {
     public class DroneWaypointGenerator
     {
-        private const float CruisingAltitude = 15f;
+        private const float CruisingAltitude = 10f;
         private readonly Vector3 _origin;
         private Transform[] _targets;
 
