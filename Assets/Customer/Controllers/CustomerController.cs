@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,27 +12,51 @@ namespace Customer.Controllers
     {
         public Transform[] restaurants;
         public OrderPlacedPublisher orderPlacedPublisher;
+        public bool canGenerateOrders = false;
+        public int minSecondsBeforeNextOrder = 3;
+        public int maxSecondsBeforeNextOrder = 10;
+
+        private float _secondsBeforeNextOrder;
 
         private void Start()
         {
-            // StartCoroutine(GenerateOrder(3));
+            _secondsBeforeNextOrder = GenerateRandomNumber(minSecondsBeforeNextOrder, maxSecondsBeforeNextOrder);
+            StartCoroutine(GenerateOrdersRoutine());
         }
 
-        // private IEnumerator GenerateOrder(float waitTimeSeconds)
-        // {
-        //     yield return new WaitForSeconds(waitTimeSeconds);
-        //     // FoodOrderService.PlaceOrder(transform, restaurants[0]);
-        // }
+        private IEnumerator GenerateOrdersRoutine()
+        {
+            while (canGenerateOrders)
+            {
+                yield return new WaitForSeconds(_secondsBeforeNextOrder);
+                PlaceOrder(transform, restaurants[0]);
+                _secondsBeforeNextOrder = GenerateRandomNumber(minSecondsBeforeNextOrder, maxSecondsBeforeNextOrder);
+            }
+        }
+        
+        // ReSharper disable Unity.PerformanceAnalysis
         private void PlaceOrder(Transform customer, Transform restaurant)
         {
-            Debug.Log("Generating order");
             var orderRecord = ScriptableObject.CreateInstance<OrderRecord>();
             orderRecord.customer = customer;
             orderRecord.restaurant = restaurant;
                 
-            Debug.Log("Placing order");
             orderPlacedPublisher.RaiseEvent(orderRecord);
-            Debug.Log("Order placed");
+        }
+        
+        static int GenerateRandomNumber(int minValue, int maxValue)
+        {
+            // Ensure that minValue is less than maxValue
+            if (minValue > maxValue)
+            {
+                throw new ArgumentException("minValue must be less than or equal to maxValue");
+            }
+
+            // Create a Random object
+            var rng = new System.Random();
+            
+            // Generate a random number within the specified range
+            return rng.Next(minValue, maxValue + 1);
         }
     }
 
@@ -42,5 +68,4 @@ namespace Customer.Controllers
             PlaceOrder(transform, restaurants[0]);
         }
     }
-    
 }
