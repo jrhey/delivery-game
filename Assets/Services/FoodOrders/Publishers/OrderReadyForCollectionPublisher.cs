@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
+using Services.FoodOrders.Models;
 
-namespace Events.FoodOrders
+namespace Services.FoodOrders.Publishers
 {
     [CreateAssetMenu(menuName = "Events/Food/Ready For Collection")]
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Events.FoodOrders
+namespace Services.FoodOrders.Models
 {
     public class OrderReceipt : ScriptableObject
     {

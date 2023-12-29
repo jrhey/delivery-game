@@ -1,6 +1,7 @@
 using UnityEngine;
-using Events.FoodOrders;
-using UnityEngine.Serialization;
+
+using Services.FoodOrders.Publishers;
+using Services.FoodOrders.Models;
 
 namespace Restaurant
 {

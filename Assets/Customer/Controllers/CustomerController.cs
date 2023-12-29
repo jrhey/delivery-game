@@ -1,7 +1,8 @@
-using Events.FoodOrders;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
+
+using Services.FoodOrders.Publishers;
+using Services.FoodOrders.Models;
 
 namespace Customer.Controllers
 {

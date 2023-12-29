@@ -1,8 +1,9 @@
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Events.FoodOrders
+using Services.FoodOrders.Models;
+
+namespace Services.FoodOrders.Publishers
 {
     [CreateAssetMenu(menuName = "Events/Food/Order Placed")]
     public class OrderPlacedPublisher : ScriptableObject
