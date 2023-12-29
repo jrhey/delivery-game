@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da1661d1176a44c7b53311a85888d04b, type: 3}
-  m_Name: OrderCreated
+  m_Name: OrderPlacedEvent
   m_EditorClassIdentifier: 
-  orderCreated:
+  Event:
     m_PersistentCalls:
       m_Calls: []

@@ -4,21 +4,22 @@ using Events.FoodOrders;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Renderers;
+using UnityEngine.Serialization;
 
 public partial class DroneFactoryController : MonoBehaviour
 {
-    public OrderReadyForCollectionEvent orderReadyForCollectionEvent;
+    [FormerlySerializedAs("orderReadyForCollectionEvent")] public OrderReadyForCollectionPublisher orderReadyForCollectionPublisher;
     public GameObject[] drones;
     private LineToPointRenderer _lineToPointRenderer;
 
     private void OnEnable()
     {
-        orderReadyForCollectionEvent.orderReadyForCollection += DeliveryReadyForDispatch;
+        orderReadyForCollectionPublisher.Event.AddListener(DeliveryReadyForDispatch);
     }
 
     private void OnDisable()
     {
-        orderReadyForCollectionEvent.orderReadyForCollection -= DeliveryReadyForDispatch;
+        orderReadyForCollectionPublisher.Event.RemoveListener(DeliveryReadyForDispatch);
     }
 
     private void Start()
