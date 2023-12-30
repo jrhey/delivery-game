@@ -10,10 +10,11 @@ namespace Components
         private LineRenderer _lineRenderer;
         private CircleAtPointRenderer _circleRenderer;
         
-        public void OnEnable()
+        public void Start()
         {
-            _lineRenderer = gameObject.AddComponent<LineRenderer>();
-            var boundsSize = GetComponent<Renderer>().bounds.size;
+            var childObject = new GameObject("Hover Circle Highlight");
+            _lineRenderer = childObject.AddComponent<LineRenderer>();
+            var boundsSize = GetComponent<BoxCollider>().bounds.size;
             var distanceFromCenter = Math.Sqrt(Math.Pow(boundsSize.x, 2) + Math.Pow(boundsSize.z, 2)) / 2;
             var circleRadius = (float) distanceFromCenter + 1;
             var circleResolution = (int) (circleRadius * 7) + 1;
@@ -24,11 +25,13 @@ namespace Components
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            print("Hovered");
             _lineRenderer.enabled = true;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            print("Left");
             _lineRenderer.enabled = false;
         }
         
