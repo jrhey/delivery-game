@@ -27,9 +27,13 @@ namespace Components
             }
 
             if (_currentWaypointIndex >= waypoints.Length)
-                return;
-
-            transform.position = Vector3.MoveTowards(currentPosition, waypoints[_currentWaypointIndex], step);
+            {
+                DestroyImmediate(gameObject);
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(currentPosition, waypoints[_currentWaypointIndex], step);
+            }
         }
     }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4407322703879691191}
   - component: {fileID: 3281825307590046215}
   - component: {fileID: 1072418745037551097}
-  - component: {fileID: 1044709480907104237}
   - component: {fileID: 5415399552849801707}
   m_Layer: 0
   m_Name: RestraurantPrefab
@@ -67,23 +66,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b79b6e6541f4caa9f372a95fe77d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodSpawners:
-  - {fileID: 1430604667623800461}
+  foodSpawnLocation: {fileID: 1430604667623800461}
   foodToSpawn: {fileID: 7935592587660282181, guid: 2deaba21c46844ac79cfc430ef2a26d6, type: 3}
   orderPlacedPublisher: {fileID: 11400000, guid: 1df22b2e4732c465db826e2c2a49bfe7, type: 2}
   orderReadyForCollectionPublisher: {fileID: 11400000, guid: 3a084845c3c994c56a00e2ef17080692, type: 2}
---- !u!114 &1044709480907104237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2430948514194612236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e5ad4e0fa74895b7bc2b8881f36018, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5415399552849801707
 MonoBehaviour:
   m_ObjectHideFlags: 0

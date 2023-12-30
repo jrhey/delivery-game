@@ -1,10 +1,7 @@
-using System;
 using Behaviours;
-using Drone.Controllers;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Renderers;
-using UnityEngine.Serialization;
 
 using Events.Publishers;
 using GameObjects.Drone.Controllers;

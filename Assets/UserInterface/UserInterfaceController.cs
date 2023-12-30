@@ -25,13 +25,13 @@ namespace UserInterface
 
         void Start()
         {
-            ordersOpenedLabel.text = $"Orders opened: {_ordersCreated.ToString()}";
+            ordersOpenedLabel.text = $"Orders created: {_ordersCreated.ToString()}";
             ordersReceivedLabel.text =  $"Orders received: {_ordersReceived.ToString()}";
         }
 
         private void UpdateOrdersOpenedLabel(OrderReceipt _)
         {
-            ordersOpenedLabel.text = $"Orders opened: {(_ordersCreated += 1).ToString()}";
+            ordersOpenedLabel.text = $"Orders created: {(_ordersCreated += 1).ToString()}";
         }
         
         private void UpdateOrdersReceivedLabel(OrderReceipt _)

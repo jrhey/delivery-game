@@ -6,13 +6,12 @@ namespace GameObjects.Restaurant.Controllers
 {
     public class RestaurantController : MonoBehaviour
     {
-        public Transform[] foodSpawners;
-        public GameObject foodToSpawn;
-        public OrderPlacedPublisher orderPlacedPublisher;
-        public OrderReadyForCollectionPublisher orderReadyForCollectionPublisher;
+        [SerializeField] private Transform foodSpawnLocation;
+        [SerializeField] private GameObject foodToSpawn;
+        [SerializeField] private OrderPlacedPublisher orderPlacedPublisher;
+        [SerializeField] private OrderReadyForCollectionPublisher orderReadyForCollectionPublisher;
 
         private readonly bool _ableToSpawnFood = true;
-        private int _currentSpawnIndex = 0;
 
         void OnEnable()
         {
@@ -23,7 +22,7 @@ namespace GameObjects.Restaurant.Controllers
         {
             if (!_ableToSpawnFood) return;
             
-            var foodObject = SpawnFoodForCollection(foodSpawners[_currentSpawnIndex]);
+            var foodObject = SpawnFoodForCollection(foodSpawnLocation);
             orderReceipt.orderItem = foodObject;
             orderReceipt.restaurant = transform;
 
@@ -34,7 +33,6 @@ namespace GameObjects.Restaurant.Controllers
         {
             var foodInstance = Instantiate(foodToSpawn, spawnTransform.position, spawnTransform.rotation);
             foodInstance.transform.SetParent(spawnTransform);
-            _currentSpawnIndex += 1;
             print($"Order ready for collection at {foodInstance.transform.position}");
             return spawnTransform;
         }
