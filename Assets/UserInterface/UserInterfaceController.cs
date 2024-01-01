@@ -3,7 +3,6 @@ using Services.FoodOrders.Models;
 using Events.Publishers;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace UserInterface
 {
