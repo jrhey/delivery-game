@@ -204,13 +204,11 @@ MonoBehaviour:
   restaurants:
   - {fileID: 0}
   orderPlacedPublisher: {fileID: 11400000, guid: 1df22b2e4732c465db826e2c2a49bfe7, type: 2}
-  cameraView: {fileID: 0}
   orderPlacedIcon: {fileID: 8495730044960103530}
   canGenerateOrders: 1
   minSecondsBeforeNextOrder: 5
   maxSecondsBeforeNextOrder: 20
   deliveryPoint: {fileID: 3344926696185787842}
-  orderReceipt: {fileID: 0}
 --- !u!1 &8495730044960103530
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,25 +1,22 @@
 using System;
 using System.Collections;
+using Events.Publishers;
+using Services.FoodOrders.Models;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Events.Publishers;
-using GameObjects.Customer;
-using Services.FoodOrders.Models;
 
-namespace Customer.Controllers
+namespace GameObjects.Customer.Controllers
 {
     public partial class CustomerController : MonoBehaviour
     {
         [SerializeField] private Transform[] restaurants;
         [SerializeField] private OrderPlacedPublisher orderPlacedPublisher;
-        [SerializeField] private GameObject cameraView;
         [SerializeField] private GameObject orderPlacedIcon;
         [SerializeField] private bool canGenerateOrders = true;
         [SerializeField] private int minSecondsBeforeNextOrder = 1;
         [SerializeField] private int maxSecondsBeforeNextOrder = 3;
 
         [SerializeField] private Transform deliveryPoint;
-        [SerializeField] public OrderReceipt orderReceipt;
 
         private float _secondsBeforeNextOrder;
         private bool _orderRoutineEnabled = true;
@@ -30,7 +27,6 @@ namespace Customer.Controllers
             deliveryPointScript.OrderArrived += OnOrderArrival;
             canGenerateOrders = true;
             orderPlacedIcon.SetActive(false);
-            orderPlacedIcon.transform.LookAt(cameraView.transform);
         }
 
         private void Start()
