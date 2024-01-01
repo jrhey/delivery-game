@@ -12,7 +12,13 @@ namespace Components
         
         public void Start()
         {
-            var childObject = new GameObject("Hover Circle Highlight");
+            var childObject = new GameObject("Hover Circle Highlight")
+            {
+                transform =
+                {
+                    parent = transform
+                }
+            };
             _lineRenderer = childObject.AddComponent<LineRenderer>();
             var boundsSize = GetComponent<BoxCollider>().bounds.size;
             var distanceFromCenter = Math.Sqrt(Math.Pow(boundsSize.x, 2) + Math.Pow(boundsSize.z, 2)) / 2;
@@ -34,6 +40,5 @@ namespace Components
             print("Left");
             _lineRenderer.enabled = false;
         }
-        
     }
 }

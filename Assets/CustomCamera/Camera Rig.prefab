@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3731051125485006287}
   - component: {fileID: 529484435924724256}
   - component: {fileID: 897262188343662560}
+  - component: {fileID: 7096139105155505218}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -92,6 +93,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6159796539097048607}
   m_Enabled: 1
+--- !u!114 &7096139105155505218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6159796539097048607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &7191741029127542404
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,15 +154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22022a48a0c6346d58de6c8748eef808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 3731051125485006287}
+  mainCamera: {fileID: 529484435924724256}
   normalSpeed: 0.5
   fastSpeed: 3
   movementSpeed: 1
   movementTime: 5
   rotationAmount: 1
   zoomAmount: {x: 0, y: -2, z: 2}
-  newPosition: {x: 0, y: 0, z: 0}
-  newRotation: {x: 0, y: 0, z: 0, w: 0}
-  newZoom: {x: 0, y: 0, z: 0}
-  dragStartPosition: {x: 0, y: 0, z: 0}
-  dragCurrentPosition: {x: 0, y: 0, z: 0}
