@@ -18,6 +18,8 @@ namespace CustomCamera
         private Vector3 _newZoom;
         private Vector3 _dragStartPosition;
         private Vector3 _dragCurrentPosition;
+        private Vector3 _rotateStartPosition;
+        private Vector3 _rotateCurrentPosition;
 
         // Start is called before the first frame update
         void Start()
@@ -66,6 +68,22 @@ namespace CustomCamera
 
                     _newPosition = transform.position + _dragStartPosition - _dragCurrentPosition;
                 } 
+            }
+
+            if (Input.GetMouseButtonDown(2))
+            {
+                _rotateStartPosition = Input.mousePosition;
+            }
+
+            if (Input.GetMouseButton(2))
+            {
+                _rotateCurrentPosition = Input.mousePosition;
+
+                Vector3 difference = _rotateStartPosition - _rotateCurrentPosition;
+
+                _rotateStartPosition = _rotateCurrentPosition;
+
+                _newRotation *= Quaternion.Euler(Vector3.up * (-difference.x / 5f));
             }
         }
 
