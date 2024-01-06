@@ -15,10 +15,10 @@ namespace GameObjects.Restaurant.Controllers
 
         void OnEnable()
         {
-            orderCreatedConsumer.Event.AddListener(PrepareOrderForCollection);
+            orderCreatedConsumer.Event.AddListener(PrepareOrderForDelivery);
         }
 
-        private void PrepareOrderForCollection(OrderReceipt orderReceipt)
+        private void PrepareOrderForDelivery(OrderReceipt orderReceipt)
         {
             if (!_ableToSpawnFood) return;
             
@@ -39,7 +39,7 @@ namespace GameObjects.Restaurant.Controllers
 
         private void OnDisable()
         {
-            orderCreatedConsumer.Event.RemoveListener(PrepareOrderForCollection);
+            orderCreatedConsumer.Event.RemoveListener(PrepareOrderForDelivery);
         }
     }
 }

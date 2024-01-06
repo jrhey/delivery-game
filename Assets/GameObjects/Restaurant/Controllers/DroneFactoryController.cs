@@ -49,9 +49,9 @@ namespace GameObjects.Restaurant.Controllers
 
         private void DispatchDroneToTargets(GameObject drone, Transform[] targets)
         {
-            var flightController = drone.GetComponent<FlightController>();
+            var flightController = drone.GetComponent<DroneController>();
             flightController.targets = targets;
-            flightController.droneFactory = transform;
+            flightController.origin = transform;
         }
     }
     public partial class DroneFactoryController : IDragHandler, IBeginDragHandler, IEndDragHandler
