@@ -1,6 +1,6 @@
+using Events.Models;
 using UnityEngine;
 using Events.Publishers;
-using Services.FoodOrders.Models;
 
 namespace GameObjects.Restaurant.Controllers
 {

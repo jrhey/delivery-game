@@ -1,4 +1,4 @@
-using Services.FoodOrders.Models;
+using Events.Models;
 using UnityEngine;
 
 namespace Behaviours

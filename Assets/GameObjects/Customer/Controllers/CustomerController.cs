@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
+using Events.Models;
 using Events.Publishers;
-using Services.FoodOrders.Models;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

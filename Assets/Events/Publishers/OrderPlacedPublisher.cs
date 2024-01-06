@@ -1,6 +1,6 @@
+using Events.Models;
 using UnityEngine;
 using UnityEngine.Events;
-using Services.FoodOrders.Models;
 
 namespace Events.Publishers
 {

@@ -1,5 +1,5 @@
 using System;
-using Services.FoodOrders.Models;
+using Events.Models;
 using Events.Publishers;
 using TMPro;
 using UnityEngine;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Services.FoodOrders.Models
+namespace Events.Models
 {
     [CreateAssetMenu(menuName = "Models/Orders/Receipt")]
     public class OrderReceipt : ScriptableObject
