@@ -853,30 +853,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8495730044960103530, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
-      propertyPath: m_Name
-      value: Order Placed Icon
-      objectReference: {fileID: 0}
-    - target: {fileID: 8612596064254999597, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
-      propertyPath: cameraView
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8612596064254999597, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
-      propertyPath: orderCreatedPublisher
-      value: 
-      objectReference: {fileID: 11400000, guid: 1b4ab89fc136c4a4a94cee7d6b7816da, type: 2}
-    - target: {fileID: 8612596064254999597, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
-      propertyPath: maxSecondsBeforeNextOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8612596064254999597, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
-      propertyPath: minSecondsBeforeNextOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8612596064254999597, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
-      propertyPath: 'restaurants.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2139731890}
     - target: {fileID: 8877503576095761049, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.999999
@@ -1427,7 +1403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8270588817426082719, guid: a0532e0a205654f1a98ca686792fdfe8, type: 3}
       propertyPath: zoomAmount.y
-      value: -1
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270588817426082719, guid: a0532e0a205654f1a98ca686792fdfe8, type: 3}
+      propertyPath: zoomAmount.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1628,10 +1608,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer
       objectReference: {fileID: 0}
-    - target: {fileID: 8612596064254999597, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
-      propertyPath: 'restaurants.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2139731890}
     - target: {fileID: 8877503576095761049, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2

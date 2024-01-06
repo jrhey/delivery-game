@@ -1,10 +1,10 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+using GameObjects.Drone.Controllers;
 using Behaviours;
 using Components;
 using Events.Models;
 using Events.Publishers;
-using GameObjects.Drone.Controllers;
-using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace GameObjects.Restaurant.Controllers
 {
@@ -28,8 +28,13 @@ namespace GameObjects.Restaurant.Controllers
 
         private void Start()
         {
-            var childObject = new GameObject();
-            childObject.transform.parent = transform;
+            var childObject = new GameObject
+            {
+                transform =
+                {
+                    parent = transform
+                }
+            };
             var lineRenderer = childObject.AddComponent<LineRenderer>();
             _lineToPointRenderer = new LineToPointRenderer(lineRenderer);
         }
@@ -53,7 +58,8 @@ namespace GameObjects.Restaurant.Controllers
     {
         public void OnDrag(PointerEventData eventData)
         {
-            var basePosition = new Vector3(transform.position.x, 0, transform.position.z);
+            var position = transform.position;
+            var basePosition = new Vector3(position.x, 0, position.z);
             _lineToPointRenderer.Render(basePosition, eventData.pointerCurrentRaycast.worldPosition);
         }
 
