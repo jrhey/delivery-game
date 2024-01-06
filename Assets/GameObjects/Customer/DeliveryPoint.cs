@@ -19,7 +19,7 @@ namespace GameObjects.Customer
             if (parcelCarrier is null)
                 return;
             
-            var orderReceipt = parcelCarrier.OrderReceipt;
+            var orderReceipt = parcelCarrier.orderReceipt;
             OrderArrived.Invoke(orderReceipt);
             orderReceivedPublisher.RaiseEvent(orderReceipt);
         }

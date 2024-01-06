@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Renderers
+namespace Components
 {
     public class LineToPointRenderer
     {

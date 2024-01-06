@@ -5,6 +5,6 @@ namespace Behaviours
 {
     public class ParcelCarrier : MonoBehaviour
     {
-        public OrderReceipt OrderReceipt;
+        public OrderReceipt orderReceipt;
     }
 }

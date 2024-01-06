@@ -1,11 +1,9 @@
 using UnityEngine;
-using Renderers;
 
-namespace Renderers
-{
+namespace Components {
     public class CircleRendererPrefab : MonoBehaviour
     {
-        public float Range;
+        public float range;
         private CircleAtPointRenderer _circleRenderer;
 
         void Start()
@@ -17,7 +15,7 @@ namespace Renderers
             circleOnGround.transform.SetParent(transform);
 
             var lineRenderer = circleOnGround.AddComponent<LineRenderer>();
-            _circleRenderer = new CircleAtPointRenderer(Range, 64, false, lineRenderer);
+            _circleRenderer = new CircleAtPointRenderer(range, 64, false, lineRenderer);
             _circleRenderer.Render(transform.position);
         }
     }

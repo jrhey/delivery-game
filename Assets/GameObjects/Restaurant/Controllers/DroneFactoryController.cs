@@ -1,8 +1,7 @@
 using Behaviours;
+using Components;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Renderers;
-
 using Events.Publishers;
 using GameObjects.Drone.Controllers;
 using Services.FoodOrders.Models;
@@ -35,7 +34,7 @@ public partial class DroneFactoryController : MonoBehaviour
     {
         var drone = Instantiate(drones[0], transform);
         var parcelCarrier = drone.GetComponent<ParcelCarrier>();
-        parcelCarrier.OrderReceipt = orderReceipt;
+        parcelCarrier.orderReceipt = orderReceipt;
         DispatchDroneToTargets(drone, new[] {  orderReceipt.orderItem, orderReceipt.customer });
     }
 
