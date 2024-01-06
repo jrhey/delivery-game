@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889c794f8e2724665aa2829a02de298d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderReceivedPublisher: {fileID: 11400000, guid: 57e4ec7b5a3554ab5acab10922e95ea3, type: 2}
+  orderDeliveredProducer: {fileID: 11400000, guid: e63d412fb1c9c42b68552da7dc54b34f, type: 2}
 --- !u!1 &4053250283268714878
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,12 +203,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restaurants:
   - {fileID: 0}
-  orderPlacedPublisher: {fileID: 11400000, guid: 1df22b2e4732c465db826e2c2a49bfe7, type: 2}
   orderPlacedIcon: {fileID: 8495730044960103530}
   canGenerateOrders: 1
   minSecondsBeforeNextOrder: 5
   maxSecondsBeforeNextOrder: 20
   deliveryPoint: {fileID: 3344926696185787842}
+  orderCreatedProducer: {fileID: 11400000, guid: 1b4ab89fc136c4a4a94cee7d6b7816da, type: 2}
 --- !u!1 &8495730044960103530
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 6303627016549361963}
   - component: {fileID: 7575084681880398563}
   m_Layer: 10
-  m_Name: OrderPlaced
+  m_Name: Order Placed Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -10,7 +10,7 @@ namespace GameObjects.Customer
     // Can notify other classes directly via `OrderArrived` delegate
     public class DeliveryPoint : MonoBehaviour
     {
-        [SerializeField] private OrderReceivedPublisher orderReceivedPublisher;
+        [SerializeField] private OrderDeliveredEvent orderDeliveredProducer;
         public UnityAction<OrderReceipt> OrderArrived;
 
         private void OnTriggerEnter(Collider other)
@@ -21,7 +21,7 @@ namespace GameObjects.Customer
             
             var orderReceipt = parcelCarrier.orderReceipt;
             OrderArrived.Invoke(orderReceipt);
-            orderReceivedPublisher.RaiseEvent(orderReceipt);
+            orderDeliveredProducer.RaiseEvent(orderReceipt);
         }
     }
 }

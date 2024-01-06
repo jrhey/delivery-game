@@ -4,9 +4,9 @@ using Events.Models;
 
 namespace Events.Publishers
 {
-    [CreateAssetMenu(menuName = "Events/Orders/Ready For Collection")]
+    [CreateAssetMenu(menuName = "Events/Orders/Prepared")]
 
-    public class OrderReadyForCollectionPublisher : ScriptableObject
+    public class OrderPreparedEvent : ScriptableObject
     {
         public UnityEvent<OrderReceipt> Event;
 

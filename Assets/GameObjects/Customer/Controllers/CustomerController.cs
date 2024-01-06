@@ -10,14 +10,13 @@ namespace GameObjects.Customer.Controllers
     public partial class CustomerController : MonoBehaviour
     {
         [SerializeField] private Transform[] restaurants;
-        [SerializeField] private OrderPlacedPublisher orderPlacedPublisher;
         [SerializeField] private GameObject orderPlacedIcon;
         [SerializeField] private bool canGenerateOrders = true;
         [SerializeField] private int minSecondsBeforeNextOrder = 1;
         [SerializeField] private int maxSecondsBeforeNextOrder = 3;
-
         [SerializeField] private Transform deliveryPoint;
-
+        [SerializeField] private OrderCreatedEvent orderCreatedProducer;
+        
         private float _secondsBeforeNextOrder;
         private bool _orderRoutineEnabled = true;
 
@@ -57,7 +56,7 @@ namespace GameObjects.Customer.Controllers
             receipt.restaurant = new RectTransform();
             receipt.orderItem = new RectTransform();
 
-            orderPlacedPublisher.RaiseEvent(receipt);
+            orderCreatedProducer.RaiseEvent(receipt);
             orderPlacedIcon.SetActive(true);
             canGenerateOrders = false;
         }

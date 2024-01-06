@@ -1,4 +1,3 @@
-using System;
 using Events.Models;
 using Events.Publishers;
 using TMPro;
@@ -8,18 +7,19 @@ namespace UserInterface
 {
     public class UserInterfaceController : MonoBehaviour
     {
+        [SerializeField] private OrderCreatedEvent orderCreatedConsumer;
+        [SerializeField] private OrderDeliveredEvent orderDeliveredConsumer;
+        
         [SerializeField] private TextMeshProUGUI ordersOpenedLabel;
-        [SerializeField] private OrderPlacedPublisher orderPlacedPublisher;
         private int _ordersCreated = 0; 
         
         [SerializeField] private TextMeshProUGUI ordersReceivedLabel;
-        [SerializeField] private OrderReceivedPublisher orderReceivedPublisher;
         private int _ordersReceived = 0; 
 
         private void OnEnable()
         {
-            orderPlacedPublisher.Event.AddListener(UpdateOrdersOpenedLabel);
-            orderReceivedPublisher.Event.AddListener(UpdateOrdersReceivedLabel);
+            orderCreatedConsumer.Event.AddListener(UpdateOrdersOpenedLabel);
+            orderDeliveredConsumer.Event.AddListener(UpdateOrdersReceivedLabel);
         }
 
         void Start()

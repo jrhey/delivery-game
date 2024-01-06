@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddfc4ab73a424aca8991c6d3e580a1eb, type: 3}
-  m_Name: OrderReceivedEvent
+  m_Script: {fileID: 11500000, guid: 1e246df0ce514f0191d7ff6af9374bbd, type: 3}
+  m_Name: OrderPreparedEvent
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:

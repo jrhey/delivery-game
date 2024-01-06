@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 namespace Events.Publishers
 {
-    [CreateAssetMenu(menuName = "Events/Orders/Order Placed")]
-    public class OrderPlacedPublisher : ScriptableObject
+    [CreateAssetMenu(menuName = "Events/Orders/Created")]
+    public class OrderCreatedEvent : ScriptableObject
     {
         public UnityEvent<OrderReceipt> Event;
 

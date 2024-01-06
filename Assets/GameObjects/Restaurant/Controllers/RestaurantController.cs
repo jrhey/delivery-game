@@ -8,14 +8,14 @@ namespace GameObjects.Restaurant.Controllers
     {
         [SerializeField] private Transform foodSpawnLocation;
         [SerializeField] private GameObject foodToSpawn;
-        [SerializeField] private OrderPlacedPublisher orderPlacedPublisher;
-        [SerializeField] private OrderReadyForCollectionPublisher orderReadyForCollectionPublisher;
+        [SerializeField] private OrderCreatedEvent orderCreatedConsumer;
+        [SerializeField] private OrderPreparedEvent orderPreparedProducer;
 
         private readonly bool _ableToSpawnFood = true;
 
         void OnEnable()
         {
-            orderPlacedPublisher.Event.AddListener(PrepareOrderForCollection);
+            orderCreatedConsumer.Event.AddListener(PrepareOrderForCollection);
         }
 
         private void PrepareOrderForCollection(OrderReceipt orderReceipt)
@@ -26,7 +26,7 @@ namespace GameObjects.Restaurant.Controllers
             orderReceipt.orderItem = foodObject;
             orderReceipt.restaurant = transform;
 
-            orderReadyForCollectionPublisher.RaiseEvent(orderReceipt);
+            orderPreparedProducer.RaiseEvent(orderReceipt);
         }
 
         private Transform SpawnFoodForCollection(Transform spawnTransform)
@@ -39,7 +39,7 @@ namespace GameObjects.Restaurant.Controllers
 
         private void OnDisable()
         {
-            orderPlacedPublisher.Event.RemoveListener(PrepareOrderForCollection);
+            orderCreatedConsumer.Event.RemoveListener(PrepareOrderForCollection);
         }
     }
 }

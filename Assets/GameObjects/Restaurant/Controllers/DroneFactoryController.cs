@@ -1,67 +1,72 @@
 using Behaviours;
 using Components;
 using Events.Models;
-using UnityEngine;
-using UnityEngine.EventSystems;
 using Events.Publishers;
 using GameObjects.Drone.Controllers;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
-public partial class DroneFactoryController : MonoBehaviour
+namespace GameObjects.Restaurant.Controllers
 {
-    public GameObject[] drones;
-    private LineToPointRenderer _lineToPointRenderer;
-    [SerializeField] private OrderReadyForCollectionPublisher orderReadyForCollectionPublisher;
+    public partial class DroneFactoryController : MonoBehaviour
+    {
+        [SerializeField] private OrderPreparedEvent orderPreparedConsumer;
+        
+        public GameObject[] drones;
+        
+        private LineToPointRenderer _lineToPointRenderer;
 
-    private void OnEnable()
-    {
-        orderReadyForCollectionPublisher.Event.AddListener(DeliveryReadyForDispatch);
-    }
+        private void OnEnable()
+        {
+            orderPreparedConsumer.Event.AddListener(DeliveryReadyForDispatch);
+        }
 
-    private void OnDisable()
-    {
-        orderReadyForCollectionPublisher.Event.RemoveListener(DeliveryReadyForDispatch);
-    }
+        private void OnDisable()
+        {
+            orderPreparedConsumer.Event.RemoveListener(DeliveryReadyForDispatch);
+        }
 
-    private void Start()
-    {
-        var childObject = new GameObject();
-        childObject.transform.parent = transform;
-        var lineRenderer = childObject.AddComponent<LineRenderer>();
-        _lineToPointRenderer = new LineToPointRenderer(lineRenderer);
-    }
+        private void Start()
+        {
+            var childObject = new GameObject();
+            childObject.transform.parent = transform;
+            var lineRenderer = childObject.AddComponent<LineRenderer>();
+            _lineToPointRenderer = new LineToPointRenderer(lineRenderer);
+        }
 
-    private void DeliveryReadyForDispatch(OrderReceipt orderReceipt)
-    {
-        var drone = Instantiate(drones[0], transform);
-        var parcelCarrier = drone.GetComponent<ParcelCarrier>();
-        parcelCarrier.orderReceipt = orderReceipt;
-        DispatchDroneToTargets(drone, new[] {  orderReceipt.orderItem, orderReceipt.customer });
-    }
+        private void DeliveryReadyForDispatch(OrderReceipt orderReceipt)
+        {
+            var drone = Instantiate(drones[0], transform);
+            var parcelCarrier = drone.GetComponent<ParcelCarrier>();
+            parcelCarrier.orderReceipt = orderReceipt;
+            DispatchDroneToTargets(drone, new[] {  orderReceipt.orderItem, orderReceipt.customer });
+        }
 
-    private void DispatchDroneToTargets(GameObject drone, Transform[] targets)
-    {
-        var flightController = drone.GetComponent<FlightController>();
-        flightController.targets = targets;
-        flightController.droneFactory = transform;
+        private void DispatchDroneToTargets(GameObject drone, Transform[] targets)
+        {
+            var flightController = drone.GetComponent<FlightController>();
+            flightController.targets = targets;
+            flightController.droneFactory = transform;
+        }
     }
-}
-public partial class DroneFactoryController : IDragHandler, IBeginDragHandler, IEndDragHandler
-{
-    public void OnDrag(PointerEventData eventData)
+    public partial class DroneFactoryController : IDragHandler, IBeginDragHandler, IEndDragHandler
     {
-        var basePosition = new Vector3(transform.position.x, 0, transform.position.z);
-        _lineToPointRenderer.Render(basePosition, eventData.pointerCurrentRaycast.worldPosition);
-    }
+        public void OnDrag(PointerEventData eventData)
+        {
+            var basePosition = new Vector3(transform.position.x, 0, transform.position.z);
+            _lineToPointRenderer.Render(basePosition, eventData.pointerCurrentRaycast.worldPosition);
+        }
 
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        print("begin drag");
-    }
+        public void OnBeginDrag(PointerEventData eventData)
+        {
+            print("begin drag");
+        }
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        _lineToPointRenderer.Clear();
-        var drone = Instantiate(drones[0], transform);
-        DispatchDroneToTargets(drone, new[] { eventData.pointerCurrentRaycast.gameObject.transform });
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            _lineToPointRenderer.Clear();
+            var drone = Instantiate(drones[0], transform);
+            DispatchDroneToTargets(drone, new[] { eventData.pointerCurrentRaycast.gameObject.transform });
+        }
     }
 }

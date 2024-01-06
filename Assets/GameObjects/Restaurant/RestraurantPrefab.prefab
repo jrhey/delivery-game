@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5415399552849801707}
   m_Layer: 0
   m_Name: RestraurantPrefab
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce230b2814101459fbee7c1236747912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orderPreparedConsumer: {fileID: 11400000, guid: 77f6801f610da45f88f57523c721cf9d, type: 2}
   drones:
   - {fileID: 305053994414267195, guid: 20e1b17b6028f4045b10aa65674c7c1a, type: 3}
-  orderReadyForCollectionPublisher: {fileID: 11400000, guid: 3a084845c3c994c56a00e2ef17080692, type: 2}
 --- !u!114 &1072418745037551097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,8 +68,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodSpawnLocation: {fileID: 1430604667623800461}
   foodToSpawn: {fileID: 7935592587660282181, guid: 2deaba21c46844ac79cfc430ef2a26d6, type: 3}
-  orderPlacedPublisher: {fileID: 11400000, guid: 1df22b2e4732c465db826e2c2a49bfe7, type: 2}
-  orderReadyForCollectionPublisher: {fileID: 11400000, guid: 3a084845c3c994c56a00e2ef17080692, type: 2}
+  orderCreatedConsumer: {fileID: 11400000, guid: 1b4ab89fc136c4a4a94cee7d6b7816da, type: 2}
+  orderPreparedProducer: {fileID: 11400000, guid: 77f6801f610da45f88f57523c721cf9d, type: 2}
 --- !u!114 &5415399552849801707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f2d06a87462498c9a43737aef8f9a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 20
+  range: 0
 --- !u!1 &3976466973682840820
 GameObject:
   m_ObjectHideFlags: 0

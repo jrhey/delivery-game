@@ -212,10 +212,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337d26cd0e62740d08d3397617fad6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orderCreatedConsumer: {fileID: 11400000, guid: 1b4ab89fc136c4a4a94cee7d6b7816da, type: 2}
+  orderDeliveredConsumer: {fileID: 11400000, guid: e63d412fb1c9c42b68552da7dc54b34f, type: 2}
   ordersOpenedLabel: {fileID: 1132415794}
-  orderPlacedPublisher: {fileID: 11400000, guid: 1df22b2e4732c465db826e2c2a49bfe7, type: 2}
   ordersReceivedLabel: {fileID: 1119480896}
-  orderReceivedPublisher: {fileID: 11400000, guid: 57e4ec7b5a3554ab5acab10922e95ea3, type: 2}
 --- !u!4 &106186388
 Transform:
   m_ObjectHideFlags: 0
@@ -853,10 +853,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8495730044960103530, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
+      propertyPath: m_Name
+      value: Order Placed Icon
+      objectReference: {fileID: 0}
     - target: {fileID: 8612596064254999597, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
       propertyPath: cameraView
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8612596064254999597, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
+      propertyPath: orderCreatedPublisher
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b4ab89fc136c4a4a94cee7d6b7816da, type: 2}
     - target: {fileID: 8612596064254999597, guid: 644ec1ab4b5aa41459e00a8d3512af9e, type: 3}
       propertyPath: maxSecondsBeforeNextOrder
       value: 20
@@ -1437,10 +1445,6 @@ PrefabInstance:
     - target: {fileID: 2430948514194612236, guid: 2ff9d01def3244b7c8da48eb57d444fe, type: 3}
       propertyPath: m_Name
       value: Restaurant
-      objectReference: {fileID: 0}
-    - target: {fileID: 2430948514194612236, guid: 2ff9d01def3244b7c8da48eb57d444fe, type: 3}
-      propertyPath: m_TagString
-      value: Building
       objectReference: {fileID: 0}
     - target: {fileID: 4407322703879691191, guid: 2ff9d01def3244b7c8da48eb57d444fe, type: 3}
       propertyPath: m_LocalPosition.x
